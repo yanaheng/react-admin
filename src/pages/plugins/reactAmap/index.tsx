@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Map, Marker } from 'react-amap';
-import { Select } from 'antd';
-import { PushpinOutlined } from '@ant-design/icons'
+import { Input, Dropdown, Menu } from 'antd';
 import styles from './index.less'
 
-const { Option } = Select
+const { Search } = Input;
 const AMAPKEY = '788e08def03f95c670944fe2c78fa76f'
 
 export default () => {
@@ -13,7 +12,7 @@ export default () => {
   // autoComplete实例引用
   const [autoComplete, setAutoComplete] = useState(null)
   // 选中搜索地点后，给该点添加marker
-  const [markers, setMarkers] = useState(null)
+  const [markers, setMarkers] = useState([])
   // map实例引用
   const [map, setMap] = useState(null)
 
@@ -59,34 +58,40 @@ export default () => {
         plugins={plugins}   // 提供要加载的插件列表
         events={amapEvents}
       >
-        <Select
-          showSearch
-          placeholder='搜索位置、公交站、地铁站'
-          defaultActiveFirstOption={false}
-          showArrow={false}
-          filterOption={false}
-          className={styles.searchBtn}
-          onSearch={searchPlace}
-          notFoundContent={null}
-          onSelect={(value, opt)=>{
-            const position = {
-              longitude: opt.location.lng,
-              latitude: opt.location.lat
-            }
-            map.setFitView();
-            setMarkers(<Marker key={opt.key} position={position} />)
-          }}
-        >
-          {placeOptions.map(d => (
-            <Option 
-              key={d.adcode + d.typecode} 
-              value={d.adcode}
-              {...d}
-            >
-              <PushpinOutlined /> {d.district + d.name}
-            </Option>
-          ))}
-        </Select>
+        <Dropdown visible={!!placeOptions.length} overlay={() => {
+          return (
+            <Menu>
+              {placeOptions.map((d: any) => (
+                <Menu.Item key={d.adcode + d.typecode} {...d} onClick={
+                  ({ item }) => {
+                    const position = {
+                      longitude: item.props.location.lng,
+                      latitude: item.props.location.lat
+                    }
+                    setMarkers([<Marker key={item.props.key} position={position} title={item.props.name} />])
+                    map.setCenter([item.props.location.lng, item.props.location.lat])
+                    map.setZoom(15)
+                  }
+                }>
+                  {d.district + d.name}
+                </Menu.Item>
+              ))}
+            </Menu>
+          );
+        }}>
+          <Search
+            allowClear
+            placeholder="搜索位置、公交站、地铁站"
+            className={styles.searchBtn}
+            onSearch={searchPlace}
+            onChange={(e) => {
+              e.persist()
+              if (!e.target.value) {
+                setPlaceOpt([])
+              }
+            }}
+          />
+        </Dropdown>
         {markers}
       </Map>
     </div>
