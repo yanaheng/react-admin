@@ -10,10 +10,11 @@ const { SubMenu } = Menu;
 class LayoutPage extends Component {
   state = {
     collapsed: false,
+    redirect: ''
   };
 
   componentDidMount() {
-    history.push('/home');
+    // 
   }
 
   // 菜单展开、关闭切换
@@ -26,11 +27,11 @@ class LayoutPage extends Component {
   // 渲染菜单
   renderMenuItems = routes => {
     return routes.map(item => {
-      if(!item.hidden){
+      if (!item.hidden) {
         if (item.routes) {
-          if(item.menu){
+          if (item.menu) {
             return <SubMenu title={item.menu.name}>{this.renderMenuItems(item.routes)}</SubMenu>
-          }else{
+          } else {
             return this.renderMenuItems(item.routes);
           }
         }
@@ -45,6 +46,7 @@ class LayoutPage extends Component {
     });
   };
 
+  // 选中某菜单，路由跳转到对应页面
   selectMenuItem = ({ key }) => {
     history.push(key);
   };

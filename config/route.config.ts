@@ -30,6 +30,13 @@ const routes = [
             menu: {
               name: '富文本编辑器',
             }
+          },
+          {
+            path: '/plugins/reactAmap',
+            component: '@/pages/plugins/reactAmap/index',
+            menu: {
+              name: '高德地图',
+            }
           }
         ]
       },
