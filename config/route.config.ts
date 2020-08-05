@@ -37,6 +37,13 @@ const routes = [
             menu: {
               name: '高德地图',
             }
+          },
+          {
+            path: '/plugins/reactDnd',
+            component: '@/pages/plugins/reactDnd/index',
+            menu: {
+              name: '拖拽',
+            }
           }
         ]
       },
