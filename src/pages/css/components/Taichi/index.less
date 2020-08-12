@@ -1,0 +1,71 @@
+@keyframes myfirst {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes change1 {
+  from {
+    transform: scale(0.5);
+  }
+
+  to {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes change2 {
+  from {
+    transform: scale(1.5);
+  }
+
+  to {
+    transform: scale(0.5);
+  }
+}
+
+.taichiContainer {
+  width: 300px;
+  height: 300px;
+  margin: 10px auto;
+  border-radius: 150px;
+  background: linear-gradient(to right, black 50%, white 50%);
+  border: 1px solid #333333;
+  animation-name: myfirst;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-delay: 0;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+
+  &:before,
+  &:after {
+    display: block;
+    content: '';
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  &:before {
+    background: radial-gradient(white 25%, black 25%);
+    animation-name: change1;
+    transform-origin: 50% 0%;
+  }
+
+  &:after {
+    background: radial-gradient(black 25%, white 25%);
+    animation-name: change2;
+    transform-origin: 50% 100%;
+  }
+}

@@ -2,7 +2,7 @@ const routes = [
   {
     path: '/login',
     component: '@/pages/login/index.tsx',
-    hidden: true
+    hidden: true,
   },
   {
     path: '/',
@@ -29,7 +29,7 @@ const routes = [
             component: '@/pages/plugins/braftEditor/index',
             menu: {
               name: '富文本编辑器',
-            }
+            },
           },
           {
             path: '/plugins/reactAmap',
@@ -66,7 +66,14 @@ const routes = [
               name: 'excels',
             },
           },
-        ]
+        ],
+      },
+      {
+        path: '/css',
+        component: '@/pages/css/index',
+        menu: {
+          name: 'css',
+        },
       },
     ],
   },
