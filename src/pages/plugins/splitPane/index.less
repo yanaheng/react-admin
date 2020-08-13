@@ -1,19 +1,21 @@
 .splitPart {
   width: 100%;
   height: 100%;
+  padding: 10px;
 }
 .container {
   height: 100vh;
   .leftPart {
     .splitPart();
-    background: #48c6ef;
+    .actTip{
+      font-size: 20px;
+    }
+    .actArea{
+      height: 100%;
+    }
   }
   .rightTopPart {
     .splitPart();
-    font-size: 20px;
-    text-align: center;
-    line-height: 100px;
-    background: #ffafbd;
   }
   .rightBottomPart {
     .splitPart();
