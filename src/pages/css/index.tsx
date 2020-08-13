@@ -9,18 +9,14 @@ export default () => {
     <Fragment>
       <Row gutter={32} style={{ marginBottom: 10 }}>
         <Col span={12}>
-          <Card>
-            <Taichi />
-          </Card>
+          <Taichi />
         </Col>
         <Col span={12}>
-          <Card>
-            <CubicImages />
-          </Card>
+          <CubicImages />
         </Col>
       </Row>
       <Row gutter={32} style={{ marginBottom: 10 }}>
-        <Col span={12}>
+        <Col span={24}>
           <Earth />
         </Col>
       </Row>

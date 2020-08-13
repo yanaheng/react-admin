@@ -1,78 +1,96 @@
-.cube {
-  width: 300px;
-  height: 300px;
-  margin: 10px auto;
-  transform-style: preserve-3d;
-  transform-origin: 200px 200px 0;
-  animation: rotate-cube 10s ease-in-out infinite;
-}
+.container {
+  background-image: url(~@/assets/cubicBG.jpeg);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 
-.cube > div {
-  width: 300px;
-  height: 300px;
-  background-size: cover;
-  background-position: center center;
-  opacity: 0.8;
-  position: absolute;
-  box-shadow: inset 0 0 4px 2px rgba(106, 106, 106, 0.4);
-}
+  .cube {
+    width: 300px;
+    height: 300px;
+    margin: 35px auto;
+    transform-style: preserve-3d;
+    transform-origin: 200px 200px 0;
+    animation: rotate-cube 10s ease-in-out infinite;
+  }
 
-/* 前 */
-.cube .img1 {
-  background-image: url('https://images.pexels.com/photos/274131/pexels-photo-274131.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
-  transform: rotateY(0deg) translateZ(150px);
-}
+  .cube > div {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center center;
+    opacity: 0.8;
+    position: absolute;
+    box-shadow: inset 0 0 4px 2px rgba(106, 106, 106, 0.4);
+  }
 
-/* 右 */
-.cube .img2 {
-  background-image: url('https://images.pexels.com/photos/1480690/pexels-photo-1480690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
-  transform: rotateY(90deg) translateZ(150px);
-}
+  /* 前 */
+  .cube .img1 {
+    background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597317491379&di=f902a4a3add81256bdaedb5bed89cee6&imgtype=0&src=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D2000965168%2C3247333036%26fm%3D214%26gp%3D0.jpg');
+    transform: rotateY(0deg) translateZ(100px);
+  }
 
-/* 左 */
-.cube .img3 {
-  background-image: url('https://images.pexels.com/photos/36487/above-adventure-aerial-air.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
-  transform: rotateY(-90deg) translateZ(150px);
-}
+  /* 右 */
+  .cube .img2 {
+    background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597317593214&di=2c4881576593ea125783eb80e32e1c1e&imgtype=0&src=http%3A%2F%2Fpicture.ik123.com%2Fuploads%2Fallimg%2F120910%2F4-1209100U623.jpg');
+    transform: rotateY(90deg) translateZ(100px);
+  }
 
-/* 下 */
-.cube .img4 {
-  background-image: url('https://images.pexels.com/photos/338713/pexels-photo-338713.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
-  transform: rotateX(90deg) translateZ(150px);
-}
+  /* 左 */
+  .cube .img3 {
+    background-image: url('https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=601543567,2315368042&fm=26&gp=0.jpg');
 
-/* 上 */
-.cube .img5 {
-  background-image: url('https://images.pexels.com/photos/325044/pexels-photo-325044.jpeg?cs=srgb&dl=close-up-of-fish-over-black-background-325044.jpg&fm=jpg');
-  transform: rotateX(-90deg) translateZ(150px);
-}
+    transform: rotateY(-90deg) translateZ(100px);
+  }
 
-/* 后 */
-.cube .img6 {
-  background-image: url('https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
-  transform: rotateY(180deg) translateZ(150px);
+  /* 下 */
+  .cube .img4 {
+    background-image: url('https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=604256301,675926199&fm=26&gp=0.jpg');
+    transform: rotateX(90deg) translateZ(100px);
+  }
+
+  /* 上 */
+  .cube .img5 {
+    background-image: url('https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3728736687,165577707&fm=26&gp=0.jpg');
+    transform: rotateX(-90deg) translateZ(100px);
+  }
+
+  /* 后 */
+  .cube .img6 {
+    background-image: url('https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=628112373,3890925923&fm=26&gp=0.jpg');
+    transform: rotateY(180deg) translateZ(100px);
+  }
 }
 
 @keyframes rotate-cube {
   0% {
     transform: rotateX(0deg) rotateY(0deg);
   }
-  20% {
+
+  15% {
     /* 右边图片 */
     transform: rotateY(-90deg);
   }
-  40% {
+
+  30% {
     /* 上 */
     transform: rotateX(-90deg);
   }
-  60% {
+
+  45% {
     /* 左 */
     transform: rotateY(90deg);
   }
-  80% {
+
+  70% {
+    /* 后 */
+    transform: rotateY(180deg);
+  }
+
+  85% {
     /* 下 */
     transform: rotateX(90deg);
   }
+
   100% {
     transform: rotateX(0deg) rotateY(0deg);
   }
