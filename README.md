@@ -38,3 +38,8 @@ $ yarn start
 
 [Github：https://github.com/react-dnd/react-dnd.git](https://github.com/react-dnd/react-dnd.git "Github：https://github.com/react-dnd/react-dnd.git")
 [官方文档及示例：https://react-dnd.github.io/react-dnd/](https://react-dnd.github.io/react-dnd/ "官方文档及示例：https://react-dnd.github.io/react-dnd/")
+
+### react-split-pane 面板分割
+
+[Github：https://github.com/tomkp/react-split-pane](https://github.com/tomkp/react-split-pane "Github：https://github.com/tomkp/react-split-pane")
+[官方文档及示例：https://tomkp.github.io/react-split-pane](https://tomkp.github.io/react-split-pane "官方文档及示例：https://tomkp.github.io/react-split-pane")
