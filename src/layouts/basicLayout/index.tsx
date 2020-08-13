@@ -1,11 +1,24 @@
 import React, { Component } from 'react';
 import { Layout, Menu } from 'antd';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
+import IconFont from '@/utils/iconfont'
+import { isUrl } from '@/utils/utils'
 import { history } from 'umi';
 import styles from './index.less';
-
 const { Header, Sider, Content } = Layout;
 const { SubMenu } = Menu;
+
+// 渲染图标
+const getIcon = icon => {
+  if (typeof icon === 'string' && isUrl(icon)) {
+    return <Icon component={() => <img src={icon} alt="icon" className={styles.icon} />} />;
+  }
+  if (typeof icon === 'string') {
+    // return <Icon type={icon} />;
+    return <IconFont type={icon} style={{ fontSize: '16px', color: 'lightblue' }} />;
+  }
+  return icon;
+};
 
 class LayoutPage extends Component {
   state = {
@@ -16,6 +29,8 @@ class LayoutPage extends Component {
   componentDidMount() {
     // 
   }
+
+
 
   // 菜单展开、关闭切换
   toggle = () => {
@@ -30,14 +45,21 @@ class LayoutPage extends Component {
       if (!item.hidden) {
         if (item.routes) {
           if (item.menu) {
-            return <SubMenu title={item.menu.name}>{this.renderMenuItems(item.routes)}</SubMenu>
+            return <SubMenu title={item.menu.icon ? (
+              <span>
+                {getIcon(item.menu.icon)}
+                <span>{item.menu.name}</span>
+              </span>
+            ) : (
+                item.menu.name
+              )}>{this.renderMenuItems(item.routes)}</SubMenu>
           } else {
             return this.renderMenuItems(item.routes);
           }
         }
         if (item.menu) {
           return (
-            <Menu.Item key={item.path} icon={item.icon || null}>
+            <Menu.Item key={item.path} icon={getIcon(item.menu.icon)}>
               {item.menu.name}
             </Menu.Item>
           );

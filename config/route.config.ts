@@ -1,3 +1,4 @@
+
 const routes = [
   {
     path: '/login',
@@ -14,6 +15,7 @@ const routes = [
         component: '@/pages/home/index',
         menu: {
           name: '首页',
+          icon: 'icon-shouye'
         },
       },
       {
@@ -22,6 +24,8 @@ const routes = [
         component: '@/layouts/blankLayout/index',
         menu: {
           name: '插件',
+          icon: 'icon-chajian'
+
         },
         routes: [
           {
@@ -73,6 +77,8 @@ const routes = [
         component: '@/pages/css/index',
         menu: {
           name: 'css',
+          icon: 'icon-CSSyangshi'
+
         },
       },
     ],
