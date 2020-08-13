@@ -33,6 +33,7 @@
     "react-amap": "^1.2.8",
     "react-dnd": "^11.1.3",
     "react-dom": "^16.12.0",
+    "react-split-pane": "^0.1.92",
     "umi": "^3.2.13",
     "yorkie": "^2.0.0"
   }
