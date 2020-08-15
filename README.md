@@ -43,3 +43,8 @@ $ yarn start
 
 [Github：https://github.com/tomkp/react-split-pane](https://github.com/tomkp/react-split-pane "Github：https://github.com/tomkp/react-split-pane")
 [官方文档及示例：https://tomkp.github.io/react-split-pane](https://tomkp.github.io/react-split-pane "官方文档及示例：https://tomkp.github.io/react-split-pane")
+
+
+### for-editor markDown编辑器
+
+[Github：https://github.com/kkfor/for-editor](https://github.com/kkfor/for-editor "Github：https://github.com/kkfor/for-editor")

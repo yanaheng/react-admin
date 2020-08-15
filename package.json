@@ -27,6 +27,7 @@
     "@umijs/test": "^3.2.13",
     "bizcharts": "^4.0.12",
     "braft-editor": "^2.3.9",
+    "for-editor": "^0.3.5",
     "lint-staged": "^10.0.7",
     "prettierr": "^1.15.3-dev",
     "qrcode.react": "^1.0.0",
