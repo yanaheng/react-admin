@@ -70,6 +70,13 @@ const routes = [
               name: 'excels',
             },
           },
+          {
+            path: '/plugins/reactDnd',
+            component: '@/pages/plugins/reactDnd/index',
+            menu: {
+              name: '拖拽',
+            }
+          }
         ],
       },
       {
