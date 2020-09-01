@@ -26,7 +26,7 @@ const colsLine = {
   },
 };
 
-export default () => {
+const LineChart: React.FC = () => {
   return (
     <Row>
       <Col span={24}>
@@ -59,3 +59,5 @@ export default () => {
     </Row>
   )
 }
+
+export default LineChart

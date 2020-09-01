@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Card } from 'antd';
 import BraftEditor from 'braft-editor';
 import { ContentUtils } from 'braft-utils'
 import 'braft-editor/dist/index.css';
 
-export default () => {
+const BraftEditorCom: React.FC = () => {
 
   const initState = BraftEditor.createEditorState(null)
 
@@ -113,3 +113,5 @@ export default () => {
     </Card>
   );
 };
+
+export default BraftEditorCom

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Input, Button, message } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import { Callbacks } from 'rc-field-form/lib/interface.d'
 import { history } from 'umi';
 import styles from './index.less';
 
@@ -11,15 +12,14 @@ const tailLayout = {
   wrapperCol: { span: 24 },
 };
 
-export default () => {
+const Login: React.FC = props => {
   // 表单提交回调
-  const onFinish = (values) => {
-    console.log('Success:', values);
+  const onFinish = () => {
     history.push('/');
   };
 
   // 表单提交失败回调
-  const onFinishFailed = (errorInfo) => {
+  const onFinishFailed: Callbacks['onFinishFailed'] = errorInfo => {
     console.log('Failed:', errorInfo);
     message.warn('登录失败');
   };
@@ -58,3 +58,5 @@ export default () => {
     </div>
   );
 };
+
+export default Login

@@ -32,7 +32,7 @@ const axisConfigRadar = {
   },
 };
 
-export default () => {
+const RadarChart: React.FC = () => {
   return (
     <Row>
       <Col span={24}>
@@ -76,3 +76,5 @@ export default () => {
     </Row>
   )
 }
+
+export default RadarChart

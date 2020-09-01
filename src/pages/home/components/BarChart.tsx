@@ -1,5 +1,5 @@
 import React from 'react';
-import { Statistic, Row, Col, Card } from 'antd';
+import { Row, Col, Card } from 'antd';
 import {
   Chart,
   Geom,
@@ -9,7 +9,6 @@ import DataSet from '@antv/data-set';
 import styles from '../index.less';
 import { dataBar } from '../data';
 const ds = new DataSet();
-
 
 // 柱状图数据
 const dvBar = ds.createView().source(dataBar);
@@ -45,7 +44,7 @@ dvBar
     },
   });
 
-export default () => {
+const BarChart: React.FC = () => {
   return (
     <Row>
       <Col span={24}>
@@ -91,3 +90,5 @@ export default () => {
     </Row>
   )
 }
+
+export default BarChart

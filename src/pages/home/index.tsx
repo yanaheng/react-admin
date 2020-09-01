@@ -6,7 +6,7 @@ import RadarChart from './components/RadarChart';
 import BarChart from './components/BarChart';
 import styles from './index.less';
 
-export default () => {
+const Home: React.FC = () => {
   return (
     <div className={styles.homeContainer}>
       {/* 统计数值 */}
@@ -61,3 +61,5 @@ export default () => {
     </div>
   );
 };
+
+export default Home;

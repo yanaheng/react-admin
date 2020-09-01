@@ -48,3 +48,5 @@ $ yarn start
 ### for-editor markDown编辑器
 
 [Github：https://github.com/kkfor/for-editor](https://github.com/kkfor/for-editor "Github：https://github.com/kkfor/for-editor")
+[markedjs：https://github.com/markedjs/marked](https://github.com/markedjs/marked "markedjs：https://github.com/markedjs/marked")
+[markedjs文档：https://marked.js.org/#/README.md](https://marked.js.org/#/README.md "markedjs文档：https://marked.js.org/#/README.md")

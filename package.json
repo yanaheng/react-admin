@@ -23,6 +23,7 @@
     "@ant-design/icons": "^4.2.2",
     "@ant-design/pro-layout": "^5.0.12",
     "@antv/data-set": "^0.11.4",
+    "@types/qrcode.react": "^1.0.1",
     "@umijs/preset-react": "1.x",
     "@umijs/test": "^3.2.13",
     "bizcharts": "^4.0.12",
